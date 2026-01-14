@@ -106,6 +106,9 @@ const Image = styled.img`
 
 const Row = styled.div`
   font-size: 1rem;
+
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
@@ -122,6 +125,8 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+
+  text-decoration: line-through;
 `;
 
 export default ShoeCard;
