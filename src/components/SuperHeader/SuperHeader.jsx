@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   padding: 12px 32px;
   gap: 24px;
   align-items: center;
+  min-height: 40px;
 `;
 
 const MarketingMessage = styled.span`
