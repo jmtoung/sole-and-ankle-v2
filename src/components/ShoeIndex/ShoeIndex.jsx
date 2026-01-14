@@ -25,7 +25,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
           </Select>
         </Header>
         <Spacer size={34} />
-        <ShoeGrid />
+        {/* <ShoeGrid /> */}
       </MainColumn>
       <LeftColumn>
         <Breadcrumbs>
@@ -42,13 +42,31 @@ const ShoeIndex = ({ sortId, setSortId }) => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
 
-const LeftColumn = styled.div``;
+  align-items: baseline; /* this is really cool! */
+`;
 
-const MainColumn = styled.div``;
+const LeftColumn = styled.div`
+  flex-basis: 248px;
+`;
 
-const Header = styled.header``;
+const MainColumn = styled.div`
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+const Header = styled.header`
+  display: flex;
+  
+  align-items: baseline;
+  justify-content: space-between;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
