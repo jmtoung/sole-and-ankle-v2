@@ -31,10 +31,19 @@ const ShoeCard = ({
       ? 'new-release'
       : 'default'
 
+  let Flag = null
+  if (variant === 'on-sale') {
+    Flag = <SaleFlag>Sale</SaleFlag>
+  }
+  if (variant === 'new-release') {
+    Flag = <NewReleaseFlag>Just Released!</NewReleaseFlag>
+  }
+
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          {Flag}
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
@@ -49,6 +58,36 @@ const ShoeCard = ({
     </Link>
   );
 };
+
+const SaleFlag = styled.div`
+  background-color: hsla(340, 65%, 47%, 1);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 11px;
+  padding-right: 9px;
+  border-radius: 2px;
+`
+
+const NewReleaseFlag = styled.div`
+  background-color: hsla(240, 60%, 63%, 1);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 11px;
+  padding-right: 9px;  
+  border-radius: 2px;
+`
 
 const Link = styled.a`
   text-decoration: none;
